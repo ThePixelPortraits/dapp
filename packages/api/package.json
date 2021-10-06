@@ -1,0 +1,31 @@
+{
+  "name": "pixel-portraits-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node -r esm app.js",
+    "start-test": "NODE_ENV=test node -r esm app.js",
+    "start-subscriber": "CONTRACT_SUBSCRIBER=true node -r esm app.js",
+    "start-subscriber-test": "NODE_ENV=test CONTRACT_SUBSCRIBER=true node -r esm app.js"
+  },
+  "dependencies": {
+    "@graphql-tools/schema": "^8.2.0",
+    "@sendgrid/mail": "^7.4.2",
+    "apollo-server-express": ">=2.14.2",
+    "aws-sdk": "^2.882.0",
+    "chalk": "^2.4.2",
+    "delay": "^5.0.0",
+    "dotenv": "^6.2.0",
+    "esm": "3.2.22",
+    "ethers": "^5.0.32",
+    "express": "4.17.1",
+    "graphql": "15.6.0",
+    "graphql-type-json": "^0.3.2",
+    "graphql-upload": "^11.0.0",
+    "mongoose": "6.0.7",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5"
+  }
+}

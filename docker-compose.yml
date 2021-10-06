@@ -1,0 +1,28 @@
+version: "3.3"
+
+services:
+  nginx:
+    depends_on:
+      - client
+      - api
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./packages/nginx
+    ports:
+      - '80:80'
+      - '443:443'
+  api:
+    build:
+      context: ./packages/api
+      dockerfile: Dockerfile
+    restart: on-failure
+    container_name: backend
+  client:
+    build:
+      context: ./packages/react-app
+      dockerfile: Dockerfile
+    volumes:
+      - /react-app/node_modules
+    restart: on-failure
+    container_name: client
